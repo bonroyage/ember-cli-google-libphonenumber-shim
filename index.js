@@ -44,8 +44,8 @@ module.exports = {
     // Per the ember-cli documentation
     // http://ember-cli.com/extending/#broccoli-build-options-for-in-repo-addons
     var target = (parentAddon || app);
-    // var vendor = this.treePaths.vendor;
-    target.import(path.join(libphonenumberPath, 'dist', 'libphonenumber.js'));
+    var vendor = this.treePaths.vendor;
+    target.import(path.join(vendor, 'google-libphonenumber', 'dist', 'libphonenumber.js'));
     target.import('vendor/libphonenumber-shims.js');
   }
 };
